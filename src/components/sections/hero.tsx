@@ -100,8 +100,9 @@ function CodeCard() {
     <>  stack: [</>,
     ...about.skills.slice(0, 3).map((skill) => <>    {str(skill)},</>),
     <>  ],</>,
+    <>  fuel: {str("hot choc")},</>,
     <>
-      {"  "}coffee: <span className="text-brand-2">Infinity</span>,
+      {"  "}tabsOpen: <span className="text-brand-2">Infinity</span>,
     </>,
     <>
       {"}"}

@@ -1,5 +1,6 @@
-import { ArrowUpRight, Mail } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
+import { EmailButton } from "@/components/email-button"
 import { GithubIcon, LinkedinIcon } from "@/components/icons"
 import { Reveal } from "@/components/reveal"
 import { profile } from "@/data/portfolio"
@@ -30,12 +31,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={150} className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-          <a
-            href={`mailto:${profile.email}`}
-            className={cn(buttonVariants({ size: "lg" }), "h-14 rounded-full px-8 text-base")}
-          >
-            <Mail /> Email me
-          </a>
+          <EmailButton email={profile.email} />
           <div className="flex gap-3">
             {channels.map(({ label, href, icon: Icon }) => (
               <a

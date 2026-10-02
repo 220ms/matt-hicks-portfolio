@@ -100,6 +100,7 @@ export const experience: Job[] = [
   },
   {
     company: "Fluger Pty Ltd",
+    companyUrl: "https://fluger.com.au/",
     role: "Junior Software Developer",
     start: "Feb 2024",
     end: "Feb 2025",

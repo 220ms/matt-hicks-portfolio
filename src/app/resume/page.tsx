@@ -75,7 +75,13 @@ export default function ResumePage() {
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4">
                   <h3 className="text-[14px] font-bold text-zinc-950">
                     {job.role} <span className="font-medium text-zinc-500">·</span>{" "}
-                    <span className="text-violet-700">{job.company}</span>
+                    {job.companyUrl ? (
+                      <a href={job.companyUrl} className="text-violet-700 hover:underline">
+                        {job.company}
+                      </a>
+                    ) : (
+                      <span className="text-violet-700">{job.company}</span>
+                    )}
                   </h3>
                   <span className="text-[11.5px] text-zinc-500 tabular-nums">
                     {job.start} – {job.end}

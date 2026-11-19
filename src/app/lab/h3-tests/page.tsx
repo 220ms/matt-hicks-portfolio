@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, ChevronRight } from "lucide-react"
 import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
 import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { profile } from "@/data/portfolio"
@@ -132,15 +133,26 @@ export default function H3TestsPage() {
 
   return (
     <>
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 md:py-16">
-        <Link href="/" className={cn(buttonVariants({ variant: "ghost" }), "-ml-3 mb-8")}>
-          <ArrowLeft /> Back to portfolio
+      <SiteHeader />
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 pt-24 pb-16 sm:px-6 md:pt-28">
+        <Link href="/lab" className={cn(buttonVariants({ variant: "ghost" }), "-ml-3 mb-8")}>
+          <ArrowLeft /> All lab experiments
         </Link>
 
         <header className="mb-12">
-          <p className="mb-3 font-mono text-sm text-brand">
-            lab <span className="text-muted-foreground">/ documentary pipeline</span>
-          </p>
+          <nav aria-label="Breadcrumb" className="mb-3 flex flex-wrap items-center gap-1 font-mono text-sm">
+            <Link href="/lab" className="text-brand hover:underline">
+              lab
+            </Link>
+            <ChevronRight className="size-3.5 text-muted-foreground" />
+            <Link href="/lab#documentary-pipeline" className="text-brand hover:underline">
+              documentary-pipeline
+            </Link>
+            <ChevronRight className="size-3.5 text-muted-foreground" />
+            <span className="text-muted-foreground" aria-current="page">
+              h3-tests
+            </span>
+          </nav>
           <h1 className="text-4xl font-bold md:text-6xl">
             Tuning <span className="text-gradient">MiniMax H3</span> on an 8 GB GPU
           </h1>

@@ -7,11 +7,13 @@ import { Button } from "@/components/ui/button"
 import { profile } from "@/data/portfolio"
 import { cn } from "@/lib/utils"
 
+// Root-relative so the same header works on sub-pages such as /lab.
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/lab", label: "Lab" },
+  { href: "/#contact", label: "Contact" },
 ]
 
 function ThemeToggle() {
@@ -53,7 +55,7 @@ export function SiteHeader() {
       )}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="font-heading text-xl font-bold tracking-tight">
+        <a href="/#top" className="font-heading text-xl font-bold tracking-tight">
           {initials}
           <span className="text-brand">.</span>
         </a>

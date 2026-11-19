@@ -17,6 +17,18 @@ export type LabEntry = {
 
 export const lab: LabEntry[] = [
   {
+    slug: "sensenova-study",
+    folder: "documentary-pipeline",
+    kind: "image",
+    size: "30 renders",
+    title: "Tuning SenseNova U1.5 on an 8 GB GPU",
+    date: "Nov 2026",
+    summary:
+      "A one-factor-at-a-time study of the SenseNova U1.5 image model: quantisation, steps, guidance, reference strength, thinking mode, seeds and resolution, with FLUX 3 Klein as the bar to beat.",
+    tags: ["SenseNova U1.5", "ComfyUI", "Python"],
+    status: "done",
+  },
+  {
     slug: "h3-tests",
     folder: "documentary-pipeline",
     kind: "video",

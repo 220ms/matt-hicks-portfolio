@@ -1,0 +1,261 @@
+{
+ "scenes": [
+  [
+   "charcoal_note",
+   "Charcoal note by firelight"
+  ],
+  [
+   "girl_finds_him",
+   "Tuareg girl finds him"
+  ]
+ ],
+ "factors": [
+  [
+   "Bar to beat",
+   "FLUX 3 Klein (our current pick) vs the SenseNova baseline.",
+   [
+    [
+     "klein",
+     "Klein int8 \u00b7 16 steps"
+    ],
+    [
+     "base",
+     "SenseNova baseline"
+    ]
+   ]
+  ],
+  [
+   "Version (quantisation)",
+   "Q6_K = 17 GB file, Q3_K_M = 10 GB. Smaller files lose some precision.",
+   [
+    [
+     "base",
+     "Q6_K"
+    ],
+    [
+     "q3",
+     "Q3_K_M"
+    ]
+   ]
+  ],
+  [
+   "Steps",
+   "More steps = more refinement passes, linearly slower.",
+   [
+    [
+     "steps20",
+     "20 steps"
+    ],
+    [
+     "base",
+     "30 steps"
+    ],
+    [
+     "steps50",
+     "50 steps"
+    ]
+   ]
+  ],
+  [
+   "Text guidance (cfg)",
+   "How hard it follows the prompt. Too high = harsh, oversaturated.",
+   [
+    [
+     "cfg2.5",
+     "cfg 2.5"
+    ],
+    [
+     "base",
+     "cfg 4"
+    ],
+    [
+     "cfg6",
+     "cfg 6"
+    ]
+   ]
+  ],
+  [
+   "Reference strength (img_cfg)",
+   "How hard it copies Mauro from the reference image.",
+   [
+    [
+     "img1.0",
+     "img_cfg 1.0"
+    ],
+    [
+     "base",
+     "img_cfg 1.5"
+    ],
+    [
+     "img2.0",
+     "img_cfg 2.0"
+    ]
+   ]
+  ],
+  [
+   "Guidance limiter (cfg_norm)",
+   "'global' tames overshoot from high guidance.",
+   [
+    [
+     "norm_none",
+     "none"
+    ],
+    [
+     "base",
+     "global"
+    ]
+   ]
+  ],
+  [
+   "Shift",
+   "Spends more of the steps on composition (higher) vs detail (lower).",
+   [
+    [
+     "base",
+     "shift 3"
+    ],
+    [
+     "shift5",
+     "shift 5"
+    ]
+   ]
+  ],
+  [
+   "Thinking mode",
+   "The model writes a plan for the image before drawing it.",
+   [
+    [
+     "base",
+     "off"
+    ],
+    [
+     "thinking",
+     "on"
+    ]
+   ]
+  ],
+  [
+   "Reference image",
+   "With vs without Mauro's reference (text description only).",
+   [
+    [
+     "base",
+     "with reference"
+    ],
+    [
+     "noref",
+     "text only"
+    ]
+   ]
+  ],
+  [
+   "Seed",
+   "Same settings, different random start: how much do takes vary?",
+   [
+    [
+     "base",
+     "seed 1"
+    ],
+    [
+     "seed2",
+     "seed 2"
+    ],
+    [
+     "seed3",
+     "seed 3"
+    ]
+   ]
+  ],
+  [
+   "Resolution",
+   "Native-ish size vs full HD (shown scaled down; click for full size).",
+   [
+    [
+     "base",
+     "1344\u00d7768"
+    ],
+    [
+     "res1920",
+     "1920\u00d71088"
+    ]
+   ]
+  ]
+ ],
+ "notes": {
+  "charcoal_note__q3": "Heavy speckled noise over the whole frame, detail lost.",
+  "girl_finds_him__q3": "Same noise; the girl turned into an older woman.",
+  "verdict::Version (quantisation)": "Q3_K_M is broken for this model: grainy speckle everywhere and lost detail, only ~10% faster. Stick with Q6_K; Q3_K_M can be deleted (frees 10 GB on C: and 10 GB on D:).",
+  "charcoal_note__base": "Beautiful ember light, but he stands at a ledge and his profile shows.",
+  "girl_finds_him__base": "Strong: a convincing young girl, kit matches the reference.",
+  "charcoal_note__steps20": "Softer; the wall cracks and fire are less defined.",
+  "charcoal_note__steps50": "Same quality as 30; the pose shifts slightly (holds the paper up).",
+  "girl_finds_him__steps20": "Fine at a glance, slightly softer textures.",
+  "girl_finds_him__steps50": "Near-identical to 30 steps.",
+  "verdict::Steps": "30 steps is the sweet spot. 20 is a little soft (fine for quick drafts); 50 costs +60% time for no visible gain.",
+  "charcoal_note__cfg2.5": "Softer, flatter contrast; the fire and wall cracks are less punchy. Same composition.",
+  "girl_finds_him__cfg2.5": "Hazier, more muted and natural; the neck cloth no longer covers his lower face (less faithful to the prompt).",
+  "charcoal_note__cfg6": "More contrast and texture in the wall, deeper greens in the shadows; a teal colour cast creeps in. Composition shifts slightly.",
+  "girl_finds_him__cfg6": "Crisper and more saturated, goats sharper, but a goat merges oddly into the girl; slight over-processed look.",
+  "verdict::Text guidance (cfg)": "cfg 4 is the best balance. 2.5 is softer and follows the prompt less (the face cloth slipped); 6 adds punch but brings a teal cast and small artefacts.",
+  "charcoal_note__img1.0": "Almost identical to 1.5.",
+  "charcoal_note__img2.0": "Same man; the pose shifts (paper held up). No gain in likeness.",
+  "girl_finds_him__img1.0": "Nearly identical to 1.5.",
+  "girl_finds_him__img2.0": "Nearly identical; slightly crisper kit.",
+  "verdict::Reference strength (img_cfg)": "Barely matters between 1.0 and 2.0: Mauro looks the same in all three. Keep 1.5; it is not the lever for consistency.",
+  "charcoal_note__norm_none": "Warmer, brighter and more saturated orange; the hand lost the charcoal stick (holding nothing). Global keeps it more controlled.",
+  "charcoal_note__shift5": "Composition changes (fire in a hollow, paper held up over it); detail similar. Not better, slightly less believable.",
+  "verdict::Thinking mode": "Not usable on an 8 GB card: with thinking on, the model is pushed almost entirely out of VRAM; the first step took 30 minutes and the estimate was ~15 hours per image. Cancelled.",
+  "charcoal_note__noref": "Text-only gets surprisingly close (same shirt, pack, wrap) and is ~35% faster (3.5 vs 5.4 min), but the face is more visible and the look drifts from the reference.",
+  "charcoal_note__seed2": "Different pose (paper held up, fire on the floor); same man and mood.",
+  "charcoal_note__seed3": "Writes on paper held in the air, a little awkward; same look.",
+  "girl_finds_him__seed2": "Different framing, darker goats; consistent man and girl.",
+  "verdict::Seed": "Seeds change pose and composition, not identity or quality: the man and the look stay consistent. Generating 2-3 seeds per shot and picking the best is the best use of extra time.",
+  "charcoal_note__res1920": "Native full HD, only ~13% slower (6.1 vs 5.4 min). Crisp fabric and strap detail; the composition reframes closer (a new size acts like a new seed).",
+  "girl_finds_him__res1920": "Full HD with crisp detail; reframed composition. Same consistency as 1344.",
+  "verdict::Resolution": "1920x1088 native is only ~13% slower and noticeably crisper: use it for final stills.",
+  "verdict::Guidance limiter (cfg_norm)": "Keep global: turning it off gave a warmer, punchier image but lost prompt details (the charcoal stick vanished).",
+  "verdict::Shift": "Keep 3: shift 5 reshuffled the composition without improving detail.",
+  "verdict::Reference image": "Keep the reference: text-only is ~35% faster and close, but the face shows more and the look drifts.",
+  "summary": "VERDICT: SenseNova U1.5 is a strong local option, roughly on par with FLUX 3 Klein for quality, better on some scenes (a convincing young girl, natural goats), weaker on others (the charcoal pose). It is about 10x slower than Klein (5-6 min vs 30 s per still).\nBest settings on an RTX 3070 Ti 8 GB: Q6_K, 1920x1088, 30 steps, cfg 4, img_cfg 1.5, cfg_norm global, shift 3, thinking OFF, with the Mauro reference image, 2-3 seeds per shot. About 6 minutes per still.\nWhat does not work: the Q3_K_M version (heavy noise), thinking mode (~15 h per image on 8 GB), 50 steps (no gain), cfg 6 (teal cast), shift 5 (no gain).\nWhere it fits: a free, unlimited backup for Gemini when the daily limits run out, and for scenes with several people. Klein stays the fast option; Gemini stays the quality pick."
+ },
+ "secs": {
+  "charcoal_note__base": 635,
+  "girl_finds_him__base": 324,
+  "charcoal_note__q3": 346,
+  "girl_finds_him__q3": 289,
+  "charcoal_note__steps20": 268,
+  "girl_finds_him__steps20": 212,
+  "charcoal_note__steps50": 515,
+  "girl_finds_him__steps50": 515,
+  "charcoal_note__cfg2.5": 310,
+  "girl_finds_him__cfg2.5": 311,
+  "charcoal_note__cfg6": 317,
+  "girl_finds_him__cfg6": 324,
+  "charcoal_note__img1.0": 226,
+  "girl_finds_him__img1.0": 218,
+  "charcoal_note__img2.0": 317,
+  "girl_finds_him__img2.0": 317,
+  "charcoal_note__norm_none": 310,
+  "girl_finds_him__norm_none": 324,
+  "charcoal_note__shift5": 359,
+  "girl_finds_him__shift5": 331,
+  "charcoal_note__thinking": 0,
+  "girl_finds_him__thinking": 0,
+  "charcoal_note__noref": 211,
+  "girl_finds_him__noref": 204,
+  "charcoal_note__seed2": 331,
+  "girl_finds_him__seed2": 338,
+  "charcoal_note__seed3": 338,
+  "girl_finds_him__seed3": 310,
+  "charcoal_note__res1920": 366,
+  "girl_finds_him__res1920": 366
+ },
+ "skipped": {
+  "charcoal_note__thinking": "thinking mode: first step took 30 min on 8 GB (ETA ~15 h per image) - cancelled",
+  "girl_finds_him__thinking": "thinking mode: first step took 30 min on 8 GB (ETA ~15 h per image) - cancelled"
+ },
+ "prompts": {
+  "charcoal_note": "Night inside a tiny mud-walled desert shrine lit only by a small dying ember fire. the man from the reference image (Image-1), keeping his exact look: lean, short dark hair, a sand-coloured running shirt, dark shorts, a pale cloth wrapped around his neck and lower face, and a small black race backpack, gaunt and exhausted, is seen from behind over his shoulder, hunched forward, writing on a scrap of paper with a piece of charcoal. His face is hidden. Deep shadows, warm ember light on his hands and the cracked mud wall. A photorealistic cinematic film still, 35mm film grain, a desaturated warm orange-and-teal grade, 16:9 widescreen. No text, letters or logos anywhere.",
+  "girl_finds_him": "Rocky Sahara scrub at harsh midday with a few goats grazing. In the middle distance a young Tuareg girl in a deep indigo headscarf and robe stands frozen, staring toward the camera side. In the foreground the man from the reference image (Image-1), keeping his exact look: lean, short dark hair, a sand-coloured running shirt, dark shorts, a pale cloth wrapped around his neck and lower face, and a small black race backpack, gaunt, sunburned and exhausted, stumbles toward her, seen from behind, his face not visible. Heat haze over the ground. A photorealistic cinematic film still, 35mm film grain, a desaturated warm orange-and-teal grade, 16:9 widescreen. No text, letters or logos anywhere."
+ }
+}

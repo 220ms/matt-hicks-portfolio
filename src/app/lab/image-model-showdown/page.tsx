@@ -34,9 +34,9 @@ const scenes = [
   { id: "k24_oasis", title: "The oasis puddle", note: "Recreating an existing Gemini still: water, harsh light, a man lying down.",
     verdict: "Gemini and Qwen full look the most photographic. Klein is decent but the water is odd. Qwen Lightning turned illustrative." },
   { id: "new_charcoal_note", title: "Writing the charcoal note (new scene)", note: "Night, ember light, face must stay hidden.",
-    verdict: "Klein clearly wins: moody, firelight on the hands, face hidden. MOSS showed his face, which breaks the brief." },
+    verdict: "Gemini has the richest detail (embers, mud walls, the scrap of paper), but his face turns into profile. Klein is more intimate and keeps the face hidden, which suits the brief better. MOSS showed his face." },
   { id: "new_walk_mountains", title: "Walking toward the mountains (new scene)", note: "Wide shot, character consistency at a distance.",
-    verdict: "Klein and Qwen Lightning are both excellent. MOSS changed his shirt to yellow." },
+    verdict: "Gemini is the crispest and most photographic; Klein and Qwen Lightning are close behind. MOSS changed his shirt to yellow." },
 ]
 
 const table = [
@@ -130,14 +130,11 @@ export default function ShowdownPage() {
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {models.map((m) => {
                   const key = `${m.id}__${sc.id}`
-                  const missing = m.id === "gemini" && sc.id.startsWith("new_")
+                  const missing = false
+                  const geminiNew = m.id === "gemini" && sc.id.startsWith("new_")
                   return (
                     <figure key={m.id} className="m-0">
-                      {missing ? (
-                        <div className="flex aspect-video items-center justify-center rounded-xl border border-dashed bg-muted/40 p-4 text-center font-mono text-xs text-muted-foreground">
-                          no Gemini version (new scene)
-                        </div>
-                      ) : (
+                      {missing ? null : (
                         <a href={`${BASE}/${key}.jpg`} target="_blank" rel="noreferrer">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={`${BASE}/${key}.jpg`} alt={`${m.name}: ${sc.title}`} loading="lazy" className="block aspect-video w-full rounded-xl bg-black object-cover" />
@@ -146,7 +143,10 @@ export default function ShowdownPage() {
                       <figcaption className="mt-2 text-sm">
                         <span className="font-semibold">{m.name}</span>
                         <span className="font-mono text-xs text-muted-foreground"> · {m.sub}{time(key) ? ` · ${time(key)}` : ""}</span>
-                        <p className="text-xs text-muted-foreground">{m.license}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {m.license}
+                          {geminiNew && " · same scene and reference, made with the video's Gemini prompt wording"}
+                        </p>
                       </figcaption>
                     </figure>
                   )

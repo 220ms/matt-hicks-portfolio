@@ -1,0 +1,30 @@
+{
+ "secs": {
+  "klein_int8__k14_bats_shrine": 138,
+  "klein_int8__k24_oasis": 28,
+  "klein_int8__new_charcoal_note": 28,
+  "klein_int8__new_walk_mountains": 36,
+  "klein_bf16__k14_bats_shrine": 217,
+  "klein_bf16__k24_oasis": 81,
+  "klein_bf16__new_charcoal_note": 81,
+  "klein_bf16__new_walk_mountains": 86,
+  "qwen_fast__k14_bats_shrine": 101,
+  "qwen_fast__k24_oasis": 61,
+  "qwen_fast__new_charcoal_note": 61,
+  "qwen_fast__new_walk_mountains": 76,
+  "moss__k14_bats_shrine": 71,
+  "moss__k24_oasis": 55,
+  "moss__new_charcoal_note": 55,
+  "moss__new_walk_mountains": 56,
+  "qwen_full__k14_bats_shrine": 338,
+  "qwen_full__k24_oasis": 333,
+  "qwen_full__new_charcoal_note": 338,
+  "qwen_full__new_walk_mountains": 328
+ },
+ "prompts": {
+  "k14_bats_shrine": "Create a photorealistic cinematic film still. Inside a tiny dark mud-walled desert shrine, thin shafts of sunlight through cracks in the walls with dust floating in the beams, a cluster of bats hanging from the ceiling of a small tower. The man from <ref_image_0>, wearing the same sand-coloured shirt, dark shorts and pale neck cloth, sits slumped against the wall in deep shadow, seen as a dark silhouette, his face not visible. Moody, desaturated warm grade, 35mm film grain, 16:9 widescreen, no text.",
+  "k24_oasis": "Create a photorealistic cinematic film still. A small muddy desert water puddle surrounded by rocks and a few scrubby plants in the Sahara, harsh midday light. The man from <ref_image_0>, gaunt and sunburned, wearing the same sand-coloured shirt, dark shorts and small black backpack, lies on his front beside the water, seen from behind and above, his face turned away from camera. Desaturated orange-and-teal grade, 35mm film grain, 16:9 widescreen, no text.",
+  "new_charcoal_note": "Create a photorealistic cinematic film still. Night inside a tiny mud-walled desert shrine lit only by a dying ember fire. The man from <ref_image_0>, wearing the same sand-coloured shirt and pale neck cloth, is seen from behind over his shoulder, hunched forward, writing on a scrap of paper with a piece of charcoal, his face hidden. Deep shadows, warm ember light on his hands, 35mm film grain, 16:9 widescreen, no text.",
+  "new_walk_mountains": "Create a photorealistic cinematic film still. Wide shot of endless Sahara dunes at dawn with a distant line of dark rocky mountains on the horizon. The man from <ref_image_0>, wearing the same sand-coloured shirt, dark shorts and small black backpack, walks away from camera toward the mountains, small in the frame, a long shadow stretching behind him. Soft golden light, haze, 35mm film grain, 16:9 widescreen, no text."
+ }
+}

@@ -17,6 +17,18 @@ export type LabEntry = {
 
 export const lab: LabEntry[] = [
   {
+    slug: "image-model-showdown",
+    folder: "documentary-pipeline",
+    kind: "image",
+    size: "23 images",
+    title: "Local image model showdown",
+    date: "Nov 2026",
+    summary:
+      "FLUX 3 Klein (int8 and bf16), Qwen Image Edit 2511 (Lightning and full), MOSS-Image and Gemini, head to head on four documentary scenes with the same prompt, seed and character reference.",
+    tags: ["FLUX 3 Klein", "Qwen Image Edit", "MOSS-Image", "Gemini"],
+    status: "done",
+  },
+  {
     slug: "sensenova-study",
     folder: "documentary-pipeline",
     kind: "image",

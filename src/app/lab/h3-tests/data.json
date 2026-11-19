@@ -1,0 +1,46 @@
+{
+ "prompts": {
+  "storm": {
+   "image": "scene_007_a.jpg",
+   "full": "Realistic cinematic documentary reconstruction: 35mm film look, soft fine film grain, a warm desaturated orange-and-teal grade, natural light. The environment and lighting are constant throughout, a single continuous shot with no cuts. Location: open Sahara dunes in a violent sandstorm. The scene: a lean man with his face wrapped in cloth and a backpack pushes forward through the storm.\nSHOT 1: The scene opens exactly on image 1. Sand whips past horizontally, his cloth wrap and clothes flap hard in the wind, he leans into the wind and takes slow heavy steps forward. The camera tracks with him slowly. His face stays covered, his clothes and backpack stay exactly as in image 1, and nobody new enters the frame. Realistic, gentle, natural motion. No text, no subtitles.\nAudio: howling wind, sand hissing against fabric, no music, no speech, no voices.",
+   "motion": "Realistic cinematic documentary reconstruction: 35mm film look, soft fine film grain, a warm desaturated orange-and-teal grade, natural light. The environment and lighting are constant throughout, a single continuous shot with no cuts. Location: open Sahara dunes in a violent sandstorm. The scene: a lean man with his face wrapped in cloth and a backpack pushes forward through the storm.\nSHOT 1: The scene opens exactly on image 1. Sand whips past horizontally, his cloth wrap and clothes flap hard in the wind, he leans into the wind and takes slow heavy steps forward. The camera tracks with him slowly. His face stays covered, his clothes and backpack stay exactly as in image 1, and nobody new enters the frame. The motion is clear, continuous and clearly visible from the first frame to the last, never frozen. Realistic, gentle, natural motion. No text, no subtitles.\nAudio: howling wind, sand hissing against fabric, no music, no speech, no voices.",
+   "action": null
+  },
+  "bats": {
+   "image": "scene_014_a.jpg",
+   "full": "Realistic cinematic documentary reconstruction: 35mm film look, soft fine film grain, a warm desaturated orange-and-teal grade, natural light. The environment and lighting are constant throughout, a single continuous shot with no cuts. Location: inside a tiny dark mud-walled desert shrine. Lighting: thin shafts of sunlight through cracks in the walls, dust floating in the beams. The scene: bats hang from the ceiling, a man sits in silhouette against the wall.\nSHOT 1: The scene opens exactly on image 1. Dust drifts slowly through the light beams, a few bats shift and flutter their wings, the man stays still and only breathes. The camera pushes in very slowly and smoothly. The man stays a dark silhouette, and nobody new enters the frame. Realistic, gentle, natural motion. No text, no subtitles.\nAudio: quiet desert wind outside, faint bat squeaks and wing rustles, no music, no speech, no voices.",
+   "motion": "Realistic cinematic documentary reconstruction: 35mm film look, soft fine film grain, a warm desaturated orange-and-teal grade, natural light. The environment and lighting are constant throughout, a single continuous shot with no cuts. Location: inside a tiny dark mud-walled desert shrine. Lighting: thin shafts of sunlight through cracks in the walls, dust floating in the beams. The scene: bats hang from the ceiling, a man sits in silhouette against the wall.\nSHOT 1: The scene opens exactly on image 1. Dust drifts slowly through the light beams, a few bats shift and flutter their wings, the man stays still and only breathes. The camera pushes in very slowly and smoothly. The man stays a dark silhouette, and nobody new enters the frame. The motion is clear, continuous and clearly visible from the first frame to the last, never frozen. Realistic, gentle, natural motion. No text, no subtitles.\nAudio: quiet desert wind outside, faint bat squeaks and wing rustles, no music, no speech, no voices.",
+   "action": "Realistic cinematic documentary reconstruction: 35mm film look, soft fine film grain, a warm desaturated orange-and-teal grade, natural light. The environment and lighting are constant throughout, a single continuous shot with no cuts. Location: inside a tiny dark mud-walled desert shrine. Lighting: thin shafts of sunlight through cracks in the walls, dust floating in the beams. The scene: a colony of bats hangs from the ceiling opening, a man sits in silhouette against the wall.\nSHOT 1: The scene opens exactly on image 1. Within the first second, a dozen bats drop from the ceiling and swirl in a loose circle through the light beams, wings beating fast, then flutter back up into the opening. Dust swirls in the beams where they pass. The man slowly lifts his head toward them. The camera pushes in very slowly. The man stays a dark silhouette, and nobody new enters the frame. Realistic, gentle, natural motion. No text, no subtitles.\nAudio: a burst of flapping wings and high bat squeaks, quiet wind outside, no music, no speech, no voices."
+  },
+  "flag": {
+   "image": "scene_015_a.jpg",
+   "full": "Realistic cinematic documentary reconstruction: 35mm film look, soft fine film grain, a warm desaturated orange-and-teal grade, natural light. The environment and lighting are constant throughout, a single continuous shot with no cuts. Location: the top of a small white-domed desert shrine under a hard blue sky. The scene: a small Italian flag tied to a stick.\nSHOT 1: The scene opens exactly on image 1. The flag flutters and snaps in a strong hot wind, fine sand blows across the dome, heat haze shimmers on the horizon. The camera slowly arcs to the right. The flag's colours stay green, white and red, and nobody enters the frame. Realistic, gentle, natural motion. No text, no subtitles.\nAudio: strong desert wind, the flag flapping, no music, no speech, no voices.",
+   "motion": "Realistic cinematic documentary reconstruction: 35mm film look, soft fine film grain, a warm desaturated orange-and-teal grade, natural light. The environment and lighting are constant throughout, a single continuous shot with no cuts. Location: the top of a small white-domed desert shrine under a hard blue sky. The scene: a small Italian flag tied to a stick.\nSHOT 1: The scene opens exactly on image 1. The flag flutters and snaps in a strong hot wind, fine sand blows across the dome, heat haze shimmers on the horizon. The camera slowly arcs to the right. The flag's colours stay green, white and red, and nobody enters the frame. The motion is clear, continuous and clearly visible from the first frame to the last, never frozen. Realistic, gentle, natural motion. No text, no subtitles.\nAudio: strong desert wind, the flag flapping, no music, no speech, no voices.",
+   "action": null
+  }
+ },
+ "secs": {
+  "storm_A_base8": 494,
+  "storm_Z_full20": 915,
+  "storm_Z_full30": 1337,
+  "bats_A_base8": 434,
+  "flag_A_base8": 434,
+  "bats_Z_full20": 917,
+  "flag_Z_full20": 917,
+  "storm_L_5s": 1903,
+  "bats_M_shift8": 928,
+  "flag_M_shift8": 928,
+  "storm_M_shift8": 928,
+  "bats_M_shift16": 940,
+  "flag_M_shift16": 928,
+  "storm_M_shift16": 940,
+  "bats_M_motion": 940,
+  "flag_M_motion": 952,
+  "storm_M_motion": 929,
+  "bats_X_mix4": 964,
+  "bats_X_mix8": 928,
+  "bats_X_action": 939,
+  "bats_X_mix4act": 928
+ },
+ "motionLine": "The motion is clear, continuous and clearly visible from the first frame to the last, never frozen."
+}

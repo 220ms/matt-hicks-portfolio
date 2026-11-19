@@ -19,7 +19,11 @@
   "qwen_full__k14_bats_shrine": 338,
   "qwen_full__k24_oasis": 333,
   "qwen_full__new_charcoal_note": 338,
-  "qwen_full__new_walk_mountains": 328
+  "qwen_full__new_walk_mountains": 328,
+  "sensenova__k14_bats_shrine": 642,
+  "sensenova__k24_oasis": 366,
+  "sensenova__new_charcoal_note": 373,
+  "sensenova__new_walk_mountains": 366
  },
  "prompts": {
   "k14_bats_shrine": "Create a photorealistic cinematic film still. Inside a tiny dark mud-walled desert shrine, thin shafts of sunlight through cracks in the walls with dust floating in the beams, a cluster of bats hanging from the ceiling of a small tower. The man from <ref_image_0>, wearing the same sand-coloured shirt, dark shorts and pale neck cloth, sits slumped against the wall in deep shadow, seen as a dark silhouette, his face not visible. Moody, desaturated warm grade, 35mm film grain, 16:9 widescreen, no text.",

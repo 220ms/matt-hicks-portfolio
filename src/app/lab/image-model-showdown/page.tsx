@@ -26,17 +26,18 @@ const models = [
   { id: "qwen_fast", name: "Qwen Image Edit 2511 · Lightning", sub: "8 steps · reference", license: "Apache 2.0" },
   { id: "qwen_full", name: "Qwen Image Edit 2511 · full", sub: "40 steps · reference", license: "Apache 2.0" },
   { id: "moss", name: "MOSS-Image SFT", sub: "25 steps · text only", license: "Apache 2.0" },
+  { id: "sensenova", name: "SenseNova U1.5 · Q6_K", sub: "30 steps · 1920×1088 · reference", license: "Apache 2.0" },
 ]
 
 const scenes = [
   { id: "k14_bats_shrine", title: "Inside the shrine with bats", note: "Recreating an existing Gemini still: low light, light beams, small subjects.",
-    verdict: "Gemini is best. Klein is a close second (bats in the roof, face wrapped). Qwen Lightning's light beams look artificial." },
+    verdict: "Gemini is the most natural. SenseNova is a strong second on mood and keeps the face fully hidden, but its bats are oversized. Klein is close behind. Qwen Lightning's light beams look artificial." },
   { id: "k24_oasis", title: "The oasis puddle", note: "Recreating an existing Gemini still: water, harsh light, a man lying down.",
-    verdict: "Gemini and Qwen full look the most photographic. Klein is decent but the water is odd. Qwen Lightning turned illustrative." },
+    verdict: "Gemini and Qwen full look the most photographic. Klein is decent but the water is odd. SenseNova is dramatic but over-graded, and he is kneeling in the puddle. Qwen Lightning turned illustrative." },
   { id: "new_charcoal_note", title: "Writing the charcoal note (new scene)", note: "Night, ember light, face must stay hidden.",
-    verdict: "Gemini has the richest detail (embers, mud walls, the scrap of paper), but his face turns into profile. Klein is more intimate and keeps the face hidden, which suits the brief better. MOSS showed his face." },
+    verdict: "SenseNova wins this one: over the shoulder, face wrapped and in shadow, a real charcoal stick on paper, embers lighting the hands. Klein is a close second. Gemini has rich detail but turns his face into profile. MOSS showed his face." },
   { id: "new_walk_mountains", title: "Walking toward the mountains (new scene)", note: "Wide shot, character consistency at a distance.",
-    verdict: "Gemini is the crispest and most photographic; Klein and Qwen Lightning are close behind. MOSS changed his shirt to yellow." },
+    verdict: "Gemini is the crispest and most photographic; Klein and Qwen Lightning are close behind. SenseNova is beautiful but he casts two shadows and is barefoot. MOSS changed his shirt to yellow." },
 ]
 
 const table = [
@@ -45,6 +46,7 @@ const table = [
   ["Qwen Edit · Lightning", "Mixed", "Mostly", "Good", "~65 s"],
   ["Qwen Edit · full", "Very photographic", "Yes, turns him toward camera", "Good", "~5.5 min"],
   ["MOSS-Image", "Good lighting", "No (text only)", "OK", "~55 s"],
+  ["SenseNova U1.5", "Very good, sometimes over-graded", "Yes, best at hiding the face", "Good, with physics slips", "~6 min"],
   ["Gemini", "The most photographic", "Yes", "Good", "~20 s, ~14-36 / account / day"],
 ]
 
@@ -75,12 +77,12 @@ export default function ShowdownPage() {
             Local <span className="text-gradient">image model</span> showdown
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Five image models that run on an RTX 3070 Ti (8 GB), plus Gemini as the cloud baseline, on the same four
+            Six image models that run on an RTX 3070 Ti (8 GB), plus Gemini as the cloud baseline, on the same four
             documentary scenes: the same prompt, seed and character reference image for every model that accepts one.
             Only models whose licence allows commercial use were tested.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            {["FLUX 3 Klein", "Qwen Image Edit 2511", "MOSS-Image", "Gemini", "ComfyUI API"].map((t) => (
+            {["FLUX 3 Klein", "Qwen Image Edit 2511", "MOSS-Image", "SenseNova U1.5", "Gemini", "ComfyUI API"].map((t) => (
               <Badge key={t} variant="outline" className="font-mono">{t}</Badge>
             ))}
           </div>
@@ -92,7 +94,7 @@ export default function ShowdownPage() {
             <b>FLUX 3 Klein int8</b> is the best all-rounder locally: realistic, keeps the character consistent and
             follows the prompt closely, at about 30 seconds a still. <b>Gemini</b> is still slightly the most
             photographic, so it is used for the shots that get animated, with Klein as the unlimited local fallback.
-            The bf16 build of Klein gave identical images for nearly three times the time.
+            The bf16 build of Klein gave identical images for nearly three times the time. <b>SenseNova U1.5</b> produced the single best still (the charcoal note) but is ~10× slower than Klein and made physics slips (kneeling in the water, a double shadow).
           </p>
           <div className="mt-6 overflow-x-auto">
             <table className="w-full min-w-[640px] text-left text-sm">
@@ -164,7 +166,7 @@ export default function ShowdownPage() {
         </div>
 
         <p className="mt-10 text-sm text-muted-foreground">
-          Not tested: Qwen Image 2.1 (non-commercial research licence) and SDXL (outdated). SenseNova U1.5 got its own{" "}
+          Not tested: Qwen Image 2.1 (non-commercial research licence) and SDXL (outdated). SenseNova U1.5 also has its own{" "}
           <Link href="/lab/sensenova-study" className="text-brand hover:underline">settings study</Link>.
         </p>
       </main>

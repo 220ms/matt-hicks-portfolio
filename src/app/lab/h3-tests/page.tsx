@@ -139,13 +139,13 @@ export default function H3TestsPage() {
 
         <header className="mb-12">
           <p className="mb-3 font-mono text-sm text-brand">
-            lab <span className="text-muted-foreground">/ ai video</span>
+            lab <span className="text-muted-foreground">/ documentary pipeline</span>
           </p>
           <h1 className="text-4xl font-bold md:text-6xl">
             Tuning <span className="text-gradient">MiniMax H3</span> on an 8 GB GPU
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Test renders for a documentary YouTube pipeline. The open-weights MiniMax H3 image-to-video model runs
+            Test renders for an AI documentary pipeline. The open-weights MiniMax H3 image-to-video model runs
             locally in ComfyUI, driven by a Python script through its API. Each comparison uses the same still image and
             the same seed (30000); only one setting changes, so the differences are the setting&apos;s doing.
           </p>
